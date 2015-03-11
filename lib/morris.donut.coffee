@@ -107,6 +107,7 @@ class Morris.Donut extends Morris.EventEmitter
 
   # Select the segment at the given index.
   select: (idx) =>
+    idx = @options.forceSelection if @options.forceSelection?
     s.deselect() for s in @segments
     segment = @segments[idx]
     segment.select()
